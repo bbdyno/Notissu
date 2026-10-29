@@ -94,6 +94,11 @@ struct AboutView: View {
                     .font(.subheadline)
                     .foregroundStyle(Theme.secondary)
             }
+            Section("도움") {
+                Link("지원", destination: URL(string: "https://bbdyno.github.io/Notissu-Site/support.html")!)
+                Link("개인정보 처리방침", destination: URL(string: "https://bbdyno.github.io/Notissu-Site/privacy.html")!)
+                Link("문의 메일 보내기", destination: URL(string: "mailto:della.kimko@gmail.com")!)
+            }
             Section("만든 곳") {
                 Link("소스 코드 (GitHub)", destination: URL(string: "https://github.com/ju-djangun/Notissu")!)
             }
