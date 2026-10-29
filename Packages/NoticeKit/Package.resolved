@@ -1,0 +1,15 @@
+{
+  "originHash" : "b8c47353efd6130f82260e05f766490b52eb51f9af964359b25f6d2895f04884",
+  "pins" : [
+    {
+      "identity" : "kanna",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tid-kijyun/Kanna",
+      "state" : {
+        "revision" : "3c73af6d3859d9240db60aef233941a715387744",
+        "version" : "6.1.0"
+      }
+    }
+  ],
+  "version" : 3
+}

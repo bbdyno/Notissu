@@ -1,0 +1,44 @@
+{
+ "success": true,
+ "code": "success.retrieved",
+ "message": "Retrieved.",
+ "data": {
+  "id": "nuigpbsz1fy3k37l",
+  "seqNo": 1949,
+  "bulletinCategory": {
+   "id": 10,
+   "name": "교육",
+   "myParent": null
+  },
+  "bulletinTextHead": null,
+  "bulletinState": null,
+  "isPrivate": false,
+  "myParent": null,
+  "title": "11월 정보활용교육 신청 안내",
+  "content": "<p class=\"0\" style=\"color: rgb(34, 34, 34); font-family: NotoSans, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 15px;\"><a href=\"https://oasis.ssu.ac.kr/research/education-courses\" style=\"color: rgb(34, 34, 34); cursor: pointer;\"><u><span style=\"font-family: &quot;맑은 고딕&quot;; color: rgb(0, 0, 255);\"><font size=\"4\">여기</font></span></u></a><span style=\"font-size: large; background-color: transparent;\">를 🖱️클릭하면 11월 정보활용교육 📅캘린더로 이동합니다.&nbsp;</span></p><p style=\"color: rgb(34, 34, 34); font-family: NotoSans, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 15px;\"><font size=\"4\">- 학부생부터 연구자까지! <span style=\"color: rgb(231, 76, 60);\">과제/논문 작성</span>을 위해 <span style=\"color: rgb(231, 76, 60);\">도서관에서 추천</span>하는 교육입니다.</font></p><p style=\"color: rgb(34, 34, 34); font-family: NotoSans, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 15px;\"><font size=\"4\">- 학술 DB업체에서 제공하는 <span style=\"color: rgb(231, 76, 60);\">실시간 온라인 교육</span>으로, 모든 교육은 '무료'로 제공됩니다.</font></p><p style=\"color: rgb(34, 34, 34); font-family: NotoSans, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 15px;\"><font size=\"4\">-&nbsp;&nbsp;<span style=\"color: rgb(142, 68, 173);\"><span style=\"background-color: rgb(255, 255, 204);\">✨</span></span><span style=\"color: rgb(142, 68, 173);\"><span style=\"background-color: rgb(255, 255, 204);\">나에게 필요한 교육을 신청</span></span>하고 들어 보세요. (교육신청을 클릭한 후 직접 신청 가능합니다.)</font></p><p style=\"color: rgb(34, 34, 34); font-family: NotoSans, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 15px;\"><font size=\"4\"><img src=\"data:image/png;base64,iVBORw0KGgo=\" alt=\"\" class=\"\"><br></font></p>",
+  "isMine": false,
+  "worker": {
+   "name": "채*미"
+  },
+  "patron": null,
+  "hitCnt": 49,
+  "dateCreated": "2026-10-28 15:41:26",
+  "lastUpdated": "2026-10-28 16:24:39",
+  "comments": [],
+  "attachments": [
+   {
+    "id": 337671,
+    "logicalName": "download.png",
+    "fileType": "image/png",
+    "fileSize": 501209,
+    "originalImageUrl": "/attachments/BULLETIN/31dd4bce-e847-4b33-93a3-0347b951829b",
+    "existsFile": true
+   }
+  ],
+  "isUseLike": false,
+  "likeCount": 0,
+  "isMyLike": false,
+  "isPatronWritable": false,
+  "replies": []
+ }
+}

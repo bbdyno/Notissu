@@ -1,0 +1,13 @@
+{
+ "success": true,
+ "code": "0000",
+ "message": "성공",
+ "data": {
+  "id": 2313,
+  "url": "https://globalmedia-bucket.s3.ap-northeast-2.amazonaws.com/attachment/2fa44406-dda0-419b-ba32-e88a82133797.pdf",
+  "path": "/attachment/2fa44406-dda0-419b-ba32-e88a82133797.pdf",
+  "name": "24학년도 입학자 기준 글로벌미디어학부 교과과정표",
+  "extension": "pdf",
+  "size": 93232
+ }
+}

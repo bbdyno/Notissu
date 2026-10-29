@@ -1,0 +1,1474 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-29",
+  "presets": {
+    "wordpress": {
+      "row": "table tbody tr",
+      "title": "td.title a",
+      "pinned": ".notice_color",
+      "attachmentMark": ".flie_ic",
+      "detailTitle": "table.t_view p.title",
+      "detailBody": "table.t_view div.td_box",
+      "detailDate": "table.t_view ul.date_w dd",
+      "attachment": "ul.flie_list li a"
+    },
+    "gnuboard": {
+      "row": "#bo_list tbody tr",
+      "title": "td.td_subject div.bo_tit a",
+      "date": "td.td_datetime",
+      "pinned": "xpath:./td[contains(@class,'td_num2')]/*[contains(@class,'notice_icon') or contains(@class,'notice_tag')]",
+      "attachmentMark": ".fa-download",
+      "author": "td.td_name",
+      "detailTitle": "#bo_v_title .bo_v_tit",
+      "detailBody": "#bo_v_con",
+      "detailDate": "#bo_v_info .if_date",
+      "attachment": "#bo_v_file a.view_file_download"
+    },
+    "boardid": {
+      "row": "xpath://table//tr[td[contains(@class,'subject')]]",
+      "title": "xpath:./td[contains(@class,'subject')]/a/@title",
+      "link": "td.subject a",
+      "date": "xpath:./td[last()-1]",
+      "pinned": "xpath:./td[1][span[contains(@class,'label')] or img[contains(@src,'icon_notice')]]",
+      "author": "xpath:./td[last()-2]",
+      "detailTitle": "xpath://div[@class='board-view']/div[@class='head']/h3 | //div[@class='board_view']/dl[1]/dd",
+      "detailBody": "xpath://div[@class='board-view']/div[@class='body'] | //div[contains(@class,'view_content')]",
+      "detailDate": "xpath://div[@class='board-view']//span[@class='date'] | //div[@class='board_view']/dl[@class='date']/dd",
+      "attachment": "a[href^=\"javascript:download\"]"
+    },
+    "infocom": {
+      "row": "div.list_box a.con_box",
+      "title": "div.subject",
+      "date": "li.date",
+      "detailTitle": ".view_box .subject_box .subject",
+      "detailBody": "xpath://div[@class='view_box']/div[@class='con']",
+      "detailDate": ".view_box .subject_box li.date"
+    },
+    "nv": {
+      "row": "xpath://div[contains(@class,'table-responsive')]/table/tr[td/a[contains(@href,'notice_view')]]",
+      "title": "xpath:./td/a[contains(@href,'notice_view')]",
+      "date": "xpath:./td[last()-1]",
+      "pinned": "xpath:./td[1][contains(.,'[공지]')]",
+      "detailTitle": "xpath://div[contains(@class,'noticeView-table')]//th | //div[@class='sub_notice_view']//th/h4",
+      "detailBody": "xpath://div[contains(@class,'noticeView-table')]//td[contains(@class,'content')] | //div[@class='sub_notice_view']/div/table/tr[4]/td",
+      "detailDate": "xpath://div[contains(@class,'noticeView-table')]//tr[2]/td[1] | //div[@class='sub_notice_view']/div/table/tr[2]/td"
+    },
+    "tbl": {
+      "row": "div.news-list > ul > li",
+      "title": "xpath:./a/div[@class='txt_box']/div[@class='tit_box']/strong/text()[normalize-space()][1]",
+      "link": "xpath:./a",
+      "date": "p.mob_date",
+      "pinned": "xpath:.//div[@class='tit_box']/strong/span[contains(@class,'tag01')]",
+      "detailTitle": "xpath://div[@class='basic_bd01_view']//div[@class='tit_box']/p",
+      "detailBody": "xpath://div[@class='basic_bd01_view']//div[@class='view_box']",
+      "detailDate": "xpath://div[@class='basic_bd01_view']//div[@class='tit_box']/span",
+      "attachment": "xpath://div[@class='view_box']//a[contains(@href,'download2.php')]"
+    },
+    "biz": {
+      "row": "#bList01 > li",
+      "title": "xpath:./div[1]/a",
+      "date": "xpath:./div[2]/span",
+      "pinned": "a.fixedPost",
+      "detailTitle": "#postTitle span",
+      "detailBody": "#postContents",
+      "detailDate": "#postTitle",
+      "attachment": "#postFileList a"
+    }
+  },
+  "boards": [
+    {
+      "id": "docs",
+      "name": "기독교학과",
+      "college": "인문대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://docs.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/",
+      "search": "https://docs.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://docs.ssu.ac.kr/학과사무실알림/공지사항/"
+    },
+    {
+      "id": "korlan",
+      "name": "국어국문학과",
+      "college": "인문대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://korlan.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/",
+      "search": "https://korlan.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://korlan.ssu.ac.kr/학과사무실알림/공지사항/",
+      "legacyCode": 14
+    },
+    {
+      "id": "englan",
+      "name": "영어영문학과",
+      "college": "인문대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://englan.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/",
+      "search": "https://englan.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://englan.ssu.ac.kr/학과사무실알림/공지사항/",
+      "legacyCode": 16
+    },
+    {
+      "id": "gerlan",
+      "name": "독어독문학과",
+      "college": "인문대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://gerlan.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/",
+      "search": "https://gerlan.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://gerlan.ssu.ac.kr/학과사무실알림/공지사항/",
+      "legacyCode": 18
+    },
+    {
+      "id": "france",
+      "name": "불어불문학과",
+      "college": "인문대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://france.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/",
+      "search": "https://france.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://france.ssu.ac.kr/학과사무실알림/공지사항/",
+      "legacyCode": 17
+    },
+    {
+      "id": "chilan",
+      "name": "중어중문학과",
+      "college": "인문대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://chilan.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/",
+      "search": "https://chilan.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://chilan.ssu.ac.kr/학과사무실알림/공지사항/",
+      "legacyCode": 15
+    },
+    {
+      "id": "japanstu",
+      "name": "일어일문학과",
+      "college": "인문대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://japanstu.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/",
+      "search": "https://japanstu.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://japanstu.ssu.ac.kr/학과사무실알림/공지사항/",
+      "legacyCode": 19
+    },
+    {
+      "id": "philo",
+      "name": "철학과",
+      "college": "인문대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://philo.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/",
+      "search": "https://philo.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://philo.ssu.ac.kr/학과사무실알림/공지사항/",
+      "legacyCode": 21
+    },
+    {
+      "id": "history",
+      "name": "사학과",
+      "college": "인문대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://history.ssu.ac.kr/학과소식/학과공지/page/{page}/",
+      "search": "https://history.ssu.ac.kr/학과소식/학과공지/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://history.ssu.ac.kr/학과소식/학과공지/",
+      "legacyCode": 20
+    },
+    {
+      "id": "creativewriting",
+      "name": "문예창작전공",
+      "college": "인문대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://creativewriting.ssu.ac.kr/공지/공지사항/page/{page}/",
+      "search": "https://creativewriting.ssu.ac.kr/공지/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://creativewriting.ssu.ac.kr/공지/공지사항/",
+      "legacyCode": 22,
+      "expect": {
+        "noDate": true
+      }
+    },
+    {
+      "id": "sports",
+      "name": "스포츠학부",
+      "college": "인문대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "http://sports.ssu.ac.kr/자료실/신앙자료실/page/{page}/",
+      "search": "http://sports.ssu.ac.kr/자료실/신앙자료실/page/{page}/?select=title&keyword={keyword}",
+      "web": "http://sports.ssu.ac.kr/자료실/신앙자료실/"
+    },
+    {
+      "id": "ssfilm",
+      "name": "영화예술전공",
+      "college": "인문대학",
+      "program": "undergraduate",
+      "engine": "film",
+      "list": "{api}/notice/notice_list?LastNoticeIndex={cursor}",
+      "web": "http://ssfilm.ssu.ac.kr/notice/index",
+      "pageSize": 10,
+      "options": {
+        "api": "http://ssfilm.ssu.ac.kr",
+        "view": "http://ssfilm.ssu.ac.kr/notice/index?NoticeIndex={id}"
+      }
+    },
+    {
+      "id": "math",
+      "name": "수학과",
+      "college": "자연과학대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://math.ssu.ac.kr/?page_id=977&paged={page}",
+      "search": "https://math.ssu.ac.kr/?page_id=977&paged={page}&select=title&keyword={keyword}",
+      "web": "https://math.ssu.ac.kr/?page_id=977",
+      "legacyCode": 24
+    },
+    {
+      "id": "physics",
+      "name": "물리학과",
+      "college": "자연과학대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://physics.ssu.ac.kr/게시판/공지사항/page/{page}/",
+      "search": "https://physics.ssu.ac.kr/게시판/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://physics.ssu.ac.kr/게시판/공지사항/",
+      "legacyCode": 26
+    },
+    {
+      "id": "chem",
+      "name": "화학과",
+      "college": "자연과학대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://chem.ssu.ac.kr/자유게시판/공지사항/page/{page}/",
+      "search": "https://chem.ssu.ac.kr/자유게시판/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://chem.ssu.ac.kr/자유게시판/공지사항/",
+      "legacyCode": 25
+    },
+    {
+      "id": "bioinfo",
+      "name": "의생명시스템학부",
+      "college": "자연과학대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://bioinfo.ssu.ac.kr/게시판/공지사항/page/{page}/",
+      "search": "https://bioinfo.ssu.ac.kr/게시판/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://bioinfo.ssu.ac.kr/게시판/공지사항/",
+      "legacyCode": 28
+    },
+    {
+      "id": "stat",
+      "name": "정보통계·보험수리학과",
+      "college": "자연과학대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "nv",
+      "list": "http://stat.ssu.ac.kr/notice.html?category=1&page={page}",
+      "search": "http://stat.ssu.ac.kr/notice.html?category=1&searchKey=tittle&searchValue={keyword}&page={page}",
+      "web": "http://stat.ssu.ac.kr/notice.html?category=1",
+      "selectors": {
+        "author": "xpath:./td[3]"
+      },
+      "link": {
+        "pattern": "idx=(\\d+)",
+        "template": "http://stat.ssu.ac.kr/notice_view.html?category=1&idx=$1"
+      },
+      "legacyCode": 27
+    },
+    {
+      "id": "law",
+      "name": "법학과",
+      "college": "법과대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://law.ssu.ac.kr/menu5/m5sub3/page/{page}/",
+      "search": "https://law.ssu.ac.kr/menu5/m5sub3/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://law.ssu.ac.kr/menu5/m5sub3/",
+      "legacyCode": 6
+    },
+    {
+      "id": "lawyer",
+      "name": "국제법무학과",
+      "college": "법과대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://lawyer.ssu.ac.kr/학과-소식/학과-공지/page/{page}/",
+      "search": "https://lawyer.ssu.ac.kr/학과-소식/학과-공지/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://lawyer.ssu.ac.kr/학과-소식/학과-공지/"
+    },
+    {
+      "id": "mysoongsil",
+      "name": "사회복지학부",
+      "college": "사회과학대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://mysoongsil.ssu.ac.kr/공지사항-2/학부-공지사항/page/{page}/",
+      "search": "https://mysoongsil.ssu.ac.kr/공지사항-2/학부-공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://mysoongsil.ssu.ac.kr/공지사항-2/학부-공지사항/",
+      "legacyCode": 35
+    },
+    {
+      "id": "pubad",
+      "name": "행정학부",
+      "college": "사회과학대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://pubad.ssu.ac.kr/정보광장/학부-공지사항/page/{page}/",
+      "search": "https://pubad.ssu.ac.kr/정보광장/학부-공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://pubad.ssu.ac.kr/정보광장/학부-공지사항/",
+      "legacyCode": 36
+    },
+    {
+      "id": "politics",
+      "name": "정치외교학과",
+      "college": "사회과학대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://politics.ssu.ac.kr/학과공지/학부-공지사항/page/{page}/",
+      "search": "https://politics.ssu.ac.kr/학과공지/학부-공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://politics.ssu.ac.kr/학과공지/학부-공지사항/",
+      "legacyCode": 40
+    },
+    {
+      "id": "masscom",
+      "name": "언론홍보학과",
+      "college": "사회과학대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://masscom.ssu.ac.kr/공지사항/학부공지/page/{page}/",
+      "search": "https://masscom.ssu.ac.kr/공지사항/학부공지/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://masscom.ssu.ac.kr/공지사항/학부공지/",
+      "legacyCode": 38
+    },
+    {
+      "id": "lifelongedu",
+      "name": "평생교육학과",
+      "college": "사회과학대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://lifelongedu.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/",
+      "search": "https://lifelongedu.ssu.ac.kr/학과사무실알림/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://lifelongedu.ssu.ac.kr/학과사무실알림/공지사항/",
+      "legacyCode": 39
+    },
+    {
+      "id": "inso",
+      "name": "정보사회학과",
+      "college": "사회과학대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "boardid",
+      "list": "http://inso.ssu.ac.kr/sub/sub04_01.php?boardid=notice&category=%ED%95%99%EA%B3%BC%EA%B3%B5%EC%A7%80&offset={offset}",
+      "search": "http://inso.ssu.ac.kr/sub/sub04_01.php?boardid=notice&category=%ED%95%99%EA%B3%BC%EA%B3%B5%EC%A7%80&sw=s&sk={keyword}&offset={offset}",
+      "web": "http://inso.ssu.ac.kr/sub/sub04_01.php?boardid=notice&category=%ED%95%99%EA%B3%BC%EA%B3%B5%EC%A7%80",
+      "pageSize": 10,
+      "legacyCode": 37,
+      "attachmentLink": {
+        "pattern": "download\\('([^']*)','([^']*)','([^']*)'\\)",
+        "template": "/module/board/download.php?boardid=$1&b_idx=$2&idx=$3"
+      }
+    },
+    {
+      "id": "gtrade",
+      "name": "글로벌통상학과",
+      "college": "경제통상대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://gtrade.ssu.ac.kr/학부알림/공지사항/page/{page}/",
+      "search": "https://gtrade.ssu.ac.kr/학부알림/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://gtrade.ssu.ac.kr/학부알림/공지사항/",
+      "legacyCode": 34
+    },
+    {
+      "id": "itrans",
+      "name": "국제무역학과 (선취업후진학)",
+      "college": "경제통상대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://itrans.ssu.ac.kr/community/공지사항/page/{page}/",
+      "search": "https://itrans.ssu.ac.kr/community/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://itrans.ssu.ac.kr/community/공지사항/"
+    },
+    {
+      "id": "eco",
+      "name": "경제학과",
+      "college": "경제통상대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "gnuboard",
+      "list": "https://eco.ssu.ac.kr/bbs/board.php?bo_table=notice&page={page}",
+      "search": "https://eco.ssu.ac.kr/bbs/board.php?bo_table=notice&sfl=wr_subject&sop=and&stx={keyword}&page={page}",
+      "web": "https://eco.ssu.ac.kr/bbs/board.php?bo_table=notice",
+      "legacyCode": 33
+    },
+    {
+      "id": "ecofinance",
+      "name": "금융경제학과 (선취업후진학)",
+      "college": "경제통상대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "list": "https://ecofinance.ssu.ac.kr/board/notice?page={page}",
+      "search": "https://ecofinance.ssu.ac.kr/board/notice?sfield=post_title&skeyword={keyword}&page={page}",
+      "web": "https://ecofinance.ssu.ac.kr/board/notice",
+      "selectors": {
+        "row": "div.el-board-list table tbody tr",
+        "title": "td.td-title a",
+        "date": "td.td-date",
+        "pinned": "xpath:./td[contains(@class,'td-num')]/span[contains(@class,'label')]",
+        "attachmentMark": ".fa-download",
+        "author": "td.td-writer",
+        "detailTitle": "div.board > h3",
+        "detailBody": "#post-content",
+        "detailDate": "div.board ul.info li.time",
+        "attachment": "a[href^=\"javascript:file_download\"]"
+      },
+      "attachmentLink": {
+        "pattern": "file_download\\('([^']+)'\\)",
+        "template": "$1"
+      }
+    },
+    {
+      "id": "accounting",
+      "name": "회계학과",
+      "college": "경영대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://accounting.ssu.ac.kr/게시판/행정공지사항/page/{page}/",
+      "search": "https://accounting.ssu.ac.kr/게시판/행정공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://accounting.ssu.ac.kr/게시판/행정공지사항/",
+      "legacyCode": 31
+    },
+    {
+      "id": "ensb",
+      "name": "벤처중소기업학과",
+      "college": "경영대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://ensb.ssu.ac.kr/학부알림/학부공지사항/page/{page}/",
+      "search": "https://ensb.ssu.ac.kr/학부알림/학부공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://ensb.ssu.ac.kr/학부알림/학부공지사항/",
+      "legacyCode": 30
+    },
+    {
+      "id": "finance",
+      "name": "금융학부",
+      "college": "경영대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://finance.ssu.ac.kr/게시판/행정공지사항/page/{page}/",
+      "search": "https://finance.ssu.ac.kr/게시판/행정공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://finance.ssu.ac.kr/게시판/행정공지사항/",
+      "legacyCode": 32
+    },
+    {
+      "id": "innobiz",
+      "name": "혁신경영학과 (계약학과)",
+      "college": "경영대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "http://innobiz.ssu.ac.kr/학사안내/공지사항/page/{page}/",
+      "search": "http://innobiz.ssu.ac.kr/학사안내/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "http://innobiz.ssu.ac.kr/학사안내/공지사항/"
+    },
+    {
+      "id": "mgmt",
+      "name": "벤처경영학과 (계약학과)",
+      "college": "경영대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://mgmt.ssu.ac.kr/학사안내/공지사항/page/{page}/",
+      "search": "https://mgmt.ssu.ac.kr/학사안내/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://mgmt.ssu.ac.kr/학사안내/공지사항/",
+      "expect": {
+        "singlePage": true
+      },
+      "selectors": {
+        "row": "div.card_wrap div.card_cont",
+        "title": "p.board_tit",
+        "link": "a",
+        "date": "span.date_val"
+      }
+    },
+    {
+      "id": "bokjimgt",
+      "name": "복지경영학과 (계약학과)",
+      "college": "경영대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://bokjimgt.ssu.ac.kr/학사안내/공지사항/page/{page}/",
+      "search": "https://bokjimgt.ssu.ac.kr/학사안내/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://bokjimgt.ssu.ac.kr/학사안내/공지사항/",
+      "expect": {
+        "singlePage": true,
+        "dormant": true
+      }
+    },
+    {
+      "id": "actx",
+      "name": "회계세무학과 (계약학과)",
+      "college": "경영대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://actx.ssu.ac.kr/학사안내/m2sub1/page/{page}/",
+      "search": "https://actx.ssu.ac.kr/학사안내/m2sub1/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://actx.ssu.ac.kr/학사안내/m2sub1/"
+    },
+    {
+      "id": "biz",
+      "name": "경영학부",
+      "college": "경영대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "biz",
+      "list": "https://biz.ssu.ac.kr/bbs/list.do?bId=BBS_03_NOTICE&page={page}",
+      "search": "https://biz.ssu.ac.kr/bbs/list.do?bId=BBS_03_NOTICE&sc_title={keyword}&page={page}",
+      "web": "https://biz.ssu.ac.kr/bbs/list.do?bId=BBS_03_NOTICE",
+      "legacyCode": 29
+    },
+    {
+      "id": "iise",
+      "name": "산업·정보시스템공학과",
+      "college": "공과대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://iise.ssu.ac.kr/cummunity/notice/page/{page}/",
+      "search": "https://iise.ssu.ac.kr/cummunity/notice/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://iise.ssu.ac.kr/cummunity/notice/",
+      "legacyCode": 12,
+      "expect": {
+        "noDate": true
+      }
+    },
+    {
+      "id": "soar",
+      "name": "건축학부 (건축학·건축공학·실내건축전공)",
+      "college": "공과대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://soar.ssu.ac.kr/news/notice/page/{page}/",
+      "search": "https://soar.ssu.ac.kr/news/notice/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://soar.ssu.ac.kr/news/notice/",
+      "legacyCode": 13
+    },
+    {
+      "id": "chemeng",
+      "name": "화학공학과",
+      "college": "공과대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "boardid",
+      "list": "http://chemeng.ssu.ac.kr/sub/sub03_01.php?boardid=notice1&offset={offset}",
+      "search": "http://chemeng.ssu.ac.kr/sub/sub03_01.php?boardid=notice1&sw=s&sk={keyword}&offset={offset}",
+      "web": "http://chemeng.ssu.ac.kr/sub/sub03_01.php?boardid=notice1",
+      "pageSize": 10,
+      "legacyCode": 8,
+      "attachmentLink": {
+        "pattern": "download\\('([^']*)','([^']*)','([^']*)'\\)",
+        "template": "/module/board/download.php?boardid=$1&b_idx=$2&idx=$3"
+      }
+    },
+    {
+      "id": "materials",
+      "name": "신소재공학과",
+      "college": "공과대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "tbl",
+      "list": "https://materials.ssu.ac.kr/bbs/board.php?tbl=bbs51&page={page}",
+      "search": "https://materials.ssu.ac.kr/bbs/board.php?tbl=bbs51&findType=title&findWord={keyword}&page={page}",
+      "web": "https://materials.ssu.ac.kr/bbs/board.php?tbl=bbs51",
+      "legacyCode": 9
+    },
+    {
+      "id": "ee",
+      "name": "전기공학부",
+      "college": "공과대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "boardid",
+      "list": "http://ee.ssu.ac.kr/sub/sub05_02.php?boardid=major&offset={offset}",
+      "search": "http://ee.ssu.ac.kr/sub/sub05_02.php?boardid=major&sw=s&sk={keyword}&offset={offset}",
+      "web": "http://ee.ssu.ac.kr/sub/sub05_02.php?boardid=major",
+      "pageSize": 10,
+      "selectors": {
+        "row": "div.board-list2 > ul > li",
+        "title": "xpath:./div[@class='subject']/a/@title",
+        "link": "div.subject a",
+        "date": "span.date",
+        "pinned": "xpath:./div[@class='num'][contains(.,'Notice')]",
+        "author": "span.name"
+      },
+      "legacyCode": 10,
+      "attachmentLink": {
+        "pattern": "download\\('([^']*)','([^']*)','([^']*)'\\)",
+        "template": "/module/board/download.php?boardid=$1&b_idx=$2&idx=$3"
+      }
+    },
+    {
+      "id": "me",
+      "name": "기계공학부",
+      "college": "공과대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "list": "https://me.ssu.ac.kr/notice/notice01.php?page={page}",
+      "search": "https://me.ssu.ac.kr/notice/notice01.php?type=&make=title&search={keyword}&page={page}",
+      "web": "https://me.ssu.ac.kr/notice/notice01.php",
+      "selectors": {
+        "row": "table.board-list tbody tr",
+        "title": "td.subject a",
+        "date": "xpath:./td[4]",
+        "pinned": "xpath:./td[1]/span[@class='ico']",
+        "author": "xpath:./td[3]",
+        "detailTitle": ".view_tit h3.v_tit",
+        "detailBody": "div.view_con",
+        "detailDate": "xpath://div[@class='view_tit']/ul[@class='v_list']/li[2]",
+        "attachment": "xpath://div[@class='view_date']//li[@class='file']/a"
+      },
+      "legacyCode": 11
+    },
+    {
+      "id": "cse",
+      "name": "컴퓨터학부",
+      "college": "IT대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "gnuboard",
+      "list": "https://cse.ssu.ac.kr/bbs/board.php?bo_table=notice&page={page}",
+      "search": "https://cse.ssu.ac.kr/bbs/board.php?bo_table=notice&sfl=wr_subject&sop=and&stx={keyword}&page={page}",
+      "web": "https://cse.ssu.ac.kr/bbs/board.php?bo_table=notice",
+      "legacyCode": 1
+    },
+    {
+      "id": "infocom",
+      "name": "전자정보공학부 전자공학전공",
+      "college": "IT대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "infocom",
+      "list": "http://infocom.ssu.ac.kr/kor/notice/undergraduate.php?pNo={page}&code=notice",
+      "search": "http://infocom.ssu.ac.kr/kor/notice/undergraduate.php?sorder={keyword}&pNo={page}&code=notice",
+      "web": "http://infocom.ssu.ac.kr/kor/notice/undergraduate.php",
+      "legacyCode": 3
+    },
+    {
+      "id": "infocom-itc",
+      "name": "전자정보공학부 IT융합전공",
+      "college": "IT대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "infocom",
+      "list": "http://infocom.ssu.ac.kr/kor/notice/undergraduate.php?pNo={page}&code=notice",
+      "search": "http://infocom.ssu.ac.kr/kor/notice/undergraduate.php?sorder={keyword}&pNo={page}&code=notice",
+      "web": "http://infocom.ssu.ac.kr/kor/notice/undergraduate.php"
+    },
+    {
+      "id": "sw",
+      "name": "소프트웨어학부",
+      "college": "IT대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "gnuboard",
+      "list": "https://sw.ssu.ac.kr/bbs/board.php?bo_table=notice&page={page}",
+      "search": "https://sw.ssu.ac.kr/bbs/board.php?bo_table=notice&sfl=wr_subject&sop=and&stx={keyword}&page={page}",
+      "web": "https://sw.ssu.ac.kr/bbs/board.php?bo_table=notice",
+      "legacyCode": 4
+    },
+    {
+      "id": "aix",
+      "name": "AI융합학부",
+      "college": "IT대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "nv",
+      "list": "https://aix.ssu.ac.kr/notice.html?page={page}",
+      "search": "https://aix.ssu.ac.kr/notice.html?searchKey=all&searchValue={keyword}&page={page}",
+      "web": "https://aix.ssu.ac.kr/notice.html",
+      "legacyCode": 5
+    },
+    {
+      "id": "media",
+      "name": "글로벌미디어학부",
+      "college": "IT대학",
+      "program": "undergraduate",
+      "engine": "nextApiV1",
+      "list": "{api}/v1/board/?page={page0}&size=15&menuId=136",
+      "search": "{api}/v1/board/?page={page0}&size=15&menuId=136&title={keyword}",
+      "web": "https://media.ssu.ac.kr/board/notices",
+      "pageSize": 15,
+      "options": {
+        "api": "https://3-37-127-112.sslip.io",
+        "view": "https://media.ssu.ac.kr/board/notices/{id}"
+      },
+      "legacyCode": 2
+    },
+    {
+      "id": "mediamba",
+      "name": "디지털미디어학과 (재직자전형)",
+      "college": "IT대학",
+      "program": "undergraduate",
+      "engine": "nextApiV1",
+      "list": "{api}/v1/board/?page={page0}&size=15&menuId=89",
+      "search": "{api}/v1/board/?page={page0}&size=15&menuId=89&title={keyword}",
+      "web": "https://mediamba.ssu.ac.kr/board/notice",
+      "pageSize": 15,
+      "options": {
+        "api": "https://api.mediamba.ssu.ac.kr",
+        "view": "https://mediamba.ssu.ac.kr/board/notice/{id}"
+      }
+    },
+    {
+      "id": "ai",
+      "name": "AI소프트웨어학부",
+      "college": "AI대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "list": "https://ai.ssu.ac.kr/board/notice?pageNum={page}",
+      "search": "https://ai.ssu.ac.kr/board/notice?condition=board_title&keyword={keyword}&pageNum={page}",
+      "web": "https://ai.ssu.ac.kr/board/notice",
+      "selectors": {
+        "row": "div.tb_style_1 table tbody tr",
+        "title": "div.title a",
+        "date": "xpath:./td[3]",
+        "pinned": "span.notice",
+        "detailTitle": ".board_detail .detail_title h3",
+        "detailBody": ".board_detail .detail_cont",
+        "detailDate": "xpath://div[@class='detail_info']/ul/li[1]/p"
+      },
+      "link": {
+        "pattern": "^(/board/notice/\\d+)",
+        "template": "https://ai.ssu.ac.kr$1"
+      }
+    },
+    {
+      "id": "sec",
+      "name": "정보보호학과 (계약학과)",
+      "college": "AI대학",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "gnuboard",
+      "list": "https://sec.ssu.ac.kr/bbs/board.php?bo_table=notice&page={page}",
+      "search": "https://sec.ssu.ac.kr/bbs/board.php?bo_table=notice&sfl=wr_subject&sop=and&stx={keyword}&page={page}",
+      "web": "https://sec.ssu.ac.kr/bbs/board.php?bo_table=notice"
+    },
+    {
+      "id": "ssubaird",
+      "name": "베어드학부대학",
+      "college": "(독립)",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://ssubaird.ssu.ac.kr/공지사항/page/{page}/",
+      "search": "https://ssubaird.ssu.ac.kr/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://ssubaird.ssu.ac.kr/공지사항/",
+      "expect": {
+        "singlePage": true
+      }
+    },
+    {
+      "id": "sls",
+      "name": "자유전공학부",
+      "college": "(독립)",
+      "program": "undergraduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://sls.ssu.ac.kr/학부소식/공지사항/page/{page}/",
+      "search": "https://sls.ssu.ac.kr/학부소식/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://sls.ssu.ac.kr/학부소식/공지사항/",
+      "legacyCode": 41
+    },
+    {
+      "id": "semicon",
+      "name": "차세대반도체학과",
+      "college": "(독립)",
+      "program": "undergraduate",
+      "engine": "html",
+      "list": "https://www.disu.ac.kr/community/notice?cidx=42&page={page}",
+      "search": "https://www.disu.ac.kr/community/notice?sc=y&cidx=42&qt=t&q={keyword}&page={page}",
+      "web": "https://www.disu.ac.kr/community/notice?cidx=42",
+      "selectors": {
+        "row": "table.disu tbody tr",
+        "title": "td.title a",
+        "date": "xpath:./td[4]",
+        "pinned": "td.noti-ico",
+        "detailTitle": "h1.bbstitle",
+        "detailBody": "div.bbs_contents",
+        "detailDate": ".infowrap .writer"
+      }
+    },
+    {
+      "id": "grad",
+      "name": "일반대학원",
+      "college": "대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://grad.ssu.ac.kr/정보광장/공지사항/page/{page}/",
+      "search": "https://grad.ssu.ac.kr/정보광장/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://grad.ssu.ac.kr/정보광장/공지사항/"
+    },
+    {
+      "id": "itmba",
+      "name": "정보과학대학원",
+      "college": "대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://itmba.ssu.ac.kr/공지사항/학사공지/page/{page}/",
+      "search": "https://itmba.ssu.ac.kr/공지사항/학사공지/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://itmba.ssu.ac.kr/공지사항/학사공지/"
+    },
+    {
+      "id": "sabok",
+      "name": "사회복지대학원",
+      "college": "대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://sabok.ssu.ac.kr/게시판/m4sub1/page/{page}/",
+      "search": "https://sabok.ssu.ac.kr/게시판/m4sub1/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://sabok.ssu.ac.kr/게시판/m4sub1/"
+    },
+    {
+      "id": "edu",
+      "name": "교육대학원",
+      "college": "대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://edu.ssu.ac.kr/정보광장/공지사항/page/{page}/",
+      "search": "https://edu.ssu.ac.kr/정보광장/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://edu.ssu.ac.kr/정보광장/공지사항/"
+    },
+    {
+      "id": "mba",
+      "name": "경영대학원",
+      "college": "대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://mba.ssu.ac.kr/경교학팀/공지사항/page/{page}/",
+      "search": "https://mba.ssu.ac.kr/경교학팀/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://mba.ssu.ac.kr/경교학팀/공지사항/"
+    },
+    {
+      "id": "sgcs",
+      "name": "기독교학대학원",
+      "college": "대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://sgcs.ssu.ac.kr/기독교학숭실人/공지사항/page/{page}/",
+      "search": "https://sgcs.ssu.ac.kr/기독교학숭실人/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://sgcs.ssu.ac.kr/기독교학숭실人/공지사항/"
+    },
+    {
+      "id": "safety",
+      "name": "안전융합대학원",
+      "college": "대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "gnuboard",
+      "list": "http://grad.safety.ssu.ac.kr/bbs/board.php?bo_table=sub7_4&page={page}",
+      "search": "http://grad.safety.ssu.ac.kr/bbs/board.php?bo_table=sub7_4&sfl=wr_subject&sop=and&stx={keyword}&page={page}",
+      "web": "http://grad.safety.ssu.ac.kr/bbs/board.php?bo_table=sub7_4",
+      "expect": {
+        "singlePage": true
+      }
+    },
+    {
+      "id": "aig",
+      "name": "AI전문대학원",
+      "college": "대학원",
+      "program": "graduate",
+      "engine": "nextApiBoard",
+      "list": "{api}/board/content/list?pageNum={page}&boardEnName=notice",
+      "search": "{api}/board/content/list?pageNum={page}&boardEnName=notice&boardTitle={keyword}",
+      "web": "https://aig.ssu.ac.kr/board/notice",
+      "pageSize": 10,
+      "options": {
+        "api": "https://aig.ssu.ac.kr/api",
+        "view": "https://aig.ssu.ac.kr/board/notice/{id}"
+      }
+    },
+    {
+      "id": "small",
+      "name": "중소기업대학원",
+      "college": "대학원",
+      "program": "graduate",
+      "engine": "nextApiBoard",
+      "list": "{api}/board/content/list?pageNum={page}&boardEnName=notice",
+      "search": "{api}/board/content/list?pageNum={page}&boardEnName=notice&boardTitle={keyword}",
+      "web": "https://small.ssu.ac.kr/board/notice",
+      "pageSize": 10,
+      "options": {
+        "api": "https://small.ssu.ac.kr/api",
+        "view": "https://small.ssu.ac.kr/board/notice/{id}"
+      }
+    },
+    {
+      "id": "metaverse",
+      "name": "가상융합대학원 (메타버스·문화콘텐츠학과)",
+      "college": "대학원",
+      "program": "graduate",
+      "engine": "staticJSON",
+      "list": "https://metaverse.ssu.ac.kr/data/content.json",
+      "web": "https://metaverse.ssu.ac.kr/notice.html",
+      "pageSize": 15,
+      "options": {
+        "key": "notice",
+        "view": "https://metaverse.ssu.ac.kr/notice.html?id={id}"
+      },
+      "expect": {
+        "singlePage": true
+      }
+    },
+    {
+      "id": "docs-grad",
+      "name": "기독교학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://docs.ssu.ac.kr/대학원/공지사항/page/{page}/",
+      "search": "https://docs.ssu.ac.kr/대학원/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://docs.ssu.ac.kr/대학원/공지사항/"
+    },
+    {
+      "id": "englan-grad",
+      "name": "영어영문학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://englan.ssu.ac.kr/대학원/공지사항/page/{page}/",
+      "search": "https://englan.ssu.ac.kr/대학원/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://englan.ssu.ac.kr/대학원/공지사항/"
+    },
+    {
+      "id": "france-grad",
+      "name": "불어불문학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://france.ssu.ac.kr/대학원/공지사항/page/{page}/",
+      "search": "https://france.ssu.ac.kr/대학원/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://france.ssu.ac.kr/대학원/공지사항/",
+      "expect": {
+        "dormant": true
+      }
+    },
+    {
+      "id": "chilan-grad",
+      "name": "중어중문학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://chilan.ssu.ac.kr/대학원/공지사항/page/{page}/",
+      "search": "https://chilan.ssu.ac.kr/대학원/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://chilan.ssu.ac.kr/대학원/공지사항/",
+      "expect": {
+        "singlePage": true,
+        "dormant": true
+      }
+    },
+    {
+      "id": "japanstu-grad",
+      "name": "일어일문학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://japanstu.ssu.ac.kr/대학원/공지사항/page/{page}/",
+      "search": "https://japanstu.ssu.ac.kr/대학원/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://japanstu.ssu.ac.kr/대학원/공지사항/",
+      "expect": {
+        "dormant": true
+      }
+    },
+    {
+      "id": "philo-grad",
+      "name": "철학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://philo.ssu.ac.kr/대학원/공지사항/page/{page}/",
+      "search": "https://philo.ssu.ac.kr/대학원/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://philo.ssu.ac.kr/대학원/공지사항/"
+    },
+    {
+      "id": "history-grad",
+      "name": "사학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://history.ssu.ac.kr/대학원/대학원-공지/page/{page}/",
+      "search": "https://history.ssu.ac.kr/대학원/대학원-공지/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://history.ssu.ac.kr/대학원/대학원-공지/",
+      "expect": {
+        "singlePage": true
+      }
+    },
+    {
+      "id": "bioinfo-grad",
+      "name": "생명정보학과 (의생명시스템학부) 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://bioinfo.ssu.ac.kr/게시판/공지사항/page/{page}/?term_id=94",
+      "search": "https://bioinfo.ssu.ac.kr/게시판/공지사항/page/{page}/?term_id=94&select=title&keyword={keyword}",
+      "web": "https://bioinfo.ssu.ac.kr/게시판/공지사항/?term_id=94"
+    },
+    {
+      "id": "law-grad",
+      "name": "법학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://law.ssu.ac.kr/대학원/대학원-공지/page/{page}/",
+      "search": "https://law.ssu.ac.kr/대학원/대학원-공지/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://law.ssu.ac.kr/대학원/대학원-공지/"
+    },
+    {
+      "id": "lawyer-grad",
+      "name": "국제법무(글로벌법률학과) 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://lawyer.ssu.ac.kr/대학원/대학원-공지/page/{page}/",
+      "search": "https://lawyer.ssu.ac.kr/대학원/대학원-공지/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://lawyer.ssu.ac.kr/대학원/대학원-공지/"
+    },
+    {
+      "id": "mysoongsil-grad",
+      "name": "사회복지학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://mysoongsil.ssu.ac.kr/대학원/대학원-공지사항/page/{page}/",
+      "search": "https://mysoongsil.ssu.ac.kr/대학원/대학원-공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://mysoongsil.ssu.ac.kr/대학원/대학원-공지사항/"
+    },
+    {
+      "id": "pubad-grad",
+      "name": "행정학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://pubad.ssu.ac.kr/정보광장/대학원-공지사항/page/{page}/",
+      "search": "https://pubad.ssu.ac.kr/정보광장/대학원-공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://pubad.ssu.ac.kr/정보광장/대학원-공지사항/"
+    },
+    {
+      "id": "politics-grad",
+      "name": "정치외교학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://politics.ssu.ac.kr/공지사항/page/{page}/",
+      "search": "https://politics.ssu.ac.kr/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://politics.ssu.ac.kr/공지사항/"
+    },
+    {
+      "id": "lifelongedu-grad",
+      "name": "평생교육학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://lifelongedu.ssu.ac.kr/대학원/공지사항/page/{page}/",
+      "search": "https://lifelongedu.ssu.ac.kr/대학원/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://lifelongedu.ssu.ac.kr/대학원/공지사항/",
+      "expect": {
+        "singlePage": true
+      }
+    },
+    {
+      "id": "gtrade-grad",
+      "name": "무역학과 (글로벌통상학과) 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://gtrade.ssu.ac.kr/대학원/대학원-공지사항/page/{page}/",
+      "search": "https://gtrade.ssu.ac.kr/대학원/대학원-공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://gtrade.ssu.ac.kr/대학원/대학원-공지사항/"
+    },
+    {
+      "id": "accounting-grad",
+      "name": "회계학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://accounting.ssu.ac.kr/일반대학원/게시판/page/{page}/",
+      "search": "https://accounting.ssu.ac.kr/일반대학원/게시판/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://accounting.ssu.ac.kr/일반대학원/게시판/",
+      "expect": {
+        "dormant": true
+      }
+    },
+    {
+      "id": "ensb-grad",
+      "name": "벤처중소기업학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://ensb.ssu.ac.kr/대학원알림/대학원공지사항/page/{page}/",
+      "search": "https://ensb.ssu.ac.kr/대학원알림/대학원공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://ensb.ssu.ac.kr/대학원알림/대학원공지사항/"
+    },
+    {
+      "id": "finance-grad",
+      "name": "금융학과·금융기술융합학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://finance.ssu.ac.kr/대학원/대학원-공지사항/page/{page}/",
+      "search": "https://finance.ssu.ac.kr/대학원/대학원-공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://finance.ssu.ac.kr/대학원/대학원-공지사항/"
+    },
+    {
+      "id": "eco-grad",
+      "name": "경제학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "gnuboard",
+      "list": "https://eco.ssu.ac.kr/bbs/board.php?bo_table=gra_notice&page={page}",
+      "search": "https://eco.ssu.ac.kr/bbs/board.php?bo_table=gra_notice&sfl=wr_subject&sop=and&stx={keyword}&page={page}",
+      "web": "https://eco.ssu.ac.kr/bbs/board.php?bo_table=gra_notice"
+    },
+    {
+      "id": "biz-grad",
+      "name": "경영학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "biz",
+      "list": "https://biz.ssu.ac.kr/bbs/list.do?bId=BBS_05_NOTICE&page={page}",
+      "search": "https://biz.ssu.ac.kr/bbs/list.do?bId=BBS_05_NOTICE&sc_title={keyword}&page={page}",
+      "web": "https://biz.ssu.ac.kr/bbs/list.do?bId=BBS_05_NOTICE"
+    },
+    {
+      "id": "chemeng-grad",
+      "name": "화학공학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "boardid",
+      "list": "http://chemeng.ssu.ac.kr/sub/sub03_02.php?boardid=notice2&offset={offset}",
+      "search": "http://chemeng.ssu.ac.kr/sub/sub03_02.php?boardid=notice2&sw=s&sk={keyword}&offset={offset}",
+      "web": "http://chemeng.ssu.ac.kr/sub/sub03_02.php?boardid=notice2",
+      "pageSize": 10,
+      "expect": {
+        "dormant": true
+      },
+      "attachmentLink": {
+        "pattern": "download\\('([^']*)','([^']*)','([^']*)'\\)",
+        "template": "/module/board/download.php?boardid=$1&b_idx=$2&idx=$3"
+      }
+    },
+    {
+      "id": "materials-grad",
+      "name": "신소재공학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "tbl",
+      "list": "https://materials.ssu.ac.kr/bbs/board.php?tbl=bbs52&page={page}",
+      "search": "https://materials.ssu.ac.kr/bbs/board.php?tbl=bbs52&findType=title&findWord={keyword}&page={page}",
+      "web": "https://materials.ssu.ac.kr/bbs/board.php?tbl=bbs52"
+    },
+    {
+      "id": "ee-grad",
+      "name": "전기공학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "boardid",
+      "list": "http://ee.ssu.ac.kr/sub/sub04_03.php?boardid=academy&offset={offset}",
+      "search": "http://ee.ssu.ac.kr/sub/sub04_03.php?boardid=academy&sw=s&sk={keyword}&offset={offset}",
+      "web": "http://ee.ssu.ac.kr/sub/sub04_03.php?boardid=academy",
+      "pageSize": 10,
+      "selectors": {
+        "row": "div.board-list2 > ul > li",
+        "title": "xpath:./div[@class='subject']/a/@title",
+        "link": "div.subject a",
+        "date": "span.date",
+        "pinned": "xpath:./div[@class='num'][contains(.,'Notice')]",
+        "author": "span.name"
+      },
+      "expect": {
+        "dormant": true
+      },
+      "attachmentLink": {
+        "pattern": "download\\('([^']*)','([^']*)','([^']*)'\\)",
+        "template": "/module/board/download.php?boardid=$1&b_idx=$2&idx=$3"
+      }
+    },
+    {
+      "id": "infocom-grad",
+      "name": "전자공학과·정보통신공학과 (전자정보공학부) 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "infocom",
+      "list": "http://infocom.ssu.ac.kr/kor/notice/graduateSchool.php?pNo={page}&code=graduate",
+      "search": "http://infocom.ssu.ac.kr/kor/notice/graduateSchool.php?sorder={keyword}&pNo={page}&code=graduate",
+      "web": "http://infocom.ssu.ac.kr/kor/notice/graduateSchool.php"
+    },
+    {
+      "id": "cse-grad",
+      "name": "컴퓨터학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "gnuboard",
+      "list": "https://cse.ssu.ac.kr/bbs/board.php?bo_table=gra_notice&page={page}",
+      "search": "https://cse.ssu.ac.kr/bbs/board.php?bo_table=gra_notice&sfl=wr_subject&sop=and&stx={keyword}&page={page}",
+      "web": "https://cse.ssu.ac.kr/bbs/board.php?bo_table=gra_notice"
+    },
+    {
+      "id": "sw-grad",
+      "name": "소프트웨어학과 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "gnuboard",
+      "list": "https://sw.ssu.ac.kr/bbs/board.php?bo_table=gra_notice&page={page}",
+      "search": "https://sw.ssu.ac.kr/bbs/board.php?bo_table=gra_notice&sfl=wr_subject&sop=and&stx={keyword}&page={page}",
+      "web": "https://sw.ssu.ac.kr/bbs/board.php?bo_table=gra_notice"
+    },
+    {
+      "id": "sec-grad",
+      "name": "정보보호 (AI융합보안학과 추정) 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "html",
+      "preset": "gnuboard",
+      "list": "https://sec.ssu.ac.kr/bbs/board.php?bo_table=gra_notice&page={page}",
+      "search": "https://sec.ssu.ac.kr/bbs/board.php?bo_table=gra_notice&sfl=wr_subject&sop=and&stx={keyword}&page={page}",
+      "web": "https://sec.ssu.ac.kr/bbs/board.php?bo_table=gra_notice",
+      "expect": {
+        "dormant": true
+      }
+    },
+    {
+      "id": "media-grad",
+      "name": "미디어학과 (글로벌미디어학부) 대학원",
+      "college": "일반대학원",
+      "program": "graduate",
+      "engine": "nextApiV1",
+      "list": "{api}/v1/board/?page={page0}&size=15&menuId=137",
+      "search": "{api}/v1/board/?page={page0}&size=15&menuId=137&title={keyword}",
+      "web": "https://media.ssu.ac.kr/board/graduate-school-notices",
+      "pageSize": 15,
+      "options": {
+        "api": "https://3-37-127-112.sslip.io",
+        "view": "https://media.ssu.ac.kr/board/graduate-school-notices/{id}"
+      }
+    },
+    {
+      "id": "scatch",
+      "name": "학교 공지",
+      "college": "본부",
+      "program": "campus",
+      "engine": "html",
+      "list": "https://scatch.ssu.ac.kr/공지사항/page/{page}/",
+      "search": "https://scatch.ssu.ac.kr/공지사항/page/{page}/?f=title&category&keyword={keyword}",
+      "web": "https://scatch.ssu.ac.kr/공지사항/",
+      "legacyCode": 100,
+      "selectors": {
+        "row": "ul.notice-lists > li:not(.notice_head)",
+        "title": ".notice_col3 a span.m-pt-5",
+        "link": ".notice_col3 a",
+        "date": ".notice_col1",
+        "detailTitle": "div.bg-white.mb-5 h1",
+        "detailBody": "xpath://div[contains(@class,'bg-white') and contains(@class,'mb-5')]/div[not(@class)][1]",
+        "attachment": "ul.download-list li a",
+        "author": ".notice_col4",
+        "detailDate": "div.bg-white.mb-5 .clearfix .float-left"
+      }
+    },
+    {
+      "id": "counsel",
+      "name": "학생상담센터",
+      "college": "본부",
+      "program": "campus",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://counsel.ssu.ac.kr/알림마당/공지사항/page/{page}/",
+      "search": "https://counsel.ssu.ac.kr/알림마당/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://counsel.ssu.ac.kr/알림마당/공지사항/"
+    },
+    {
+      "id": "ctl",
+      "name": "교수학습혁신센터",
+      "college": "본부",
+      "program": "campus",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://ctl.ssu.ac.kr/공지사항/page/{page}/",
+      "search": "https://ctl.ssu.ac.kr/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://ctl.ssu.ac.kr/공지사항/"
+    },
+    {
+      "id": "humanrights",
+      "name": "인권센터",
+      "college": "본부",
+      "program": "campus",
+      "engine": "html",
+      "preset": "wordpress",
+      "list": "https://humanrights.ssu.ac.kr/알림마당/공지사항/page/{page}/",
+      "search": "https://humanrights.ssu.ac.kr/알림마당/공지사항/page/{page}/?select=title&keyword={keyword}",
+      "web": "https://humanrights.ssu.ac.kr/알림마당/공지사항/",
+      "expect": {
+        "singlePage": true
+      }
+    },
+    {
+      "id": "dorm",
+      "name": "기숙사 (레지던스홀)",
+      "college": "본부",
+      "program": "campus",
+      "engine": "html",
+      "list": "https://ssudorm.ssu.ac.kr:444/SShostel/mall_main.php?viewform=B0001_noticeboard_list&board_no=1&next={offset}",
+      "search": "https://ssudorm.ssu.ac.kr:444/SShostel/mall_main.php?viewform=B0001_noticeboard_list&board_no=1&W=title&Q={keyword}&next={offset}",
+      "web": "https://ssudorm.ssu.ac.kr:444/SShostel/mall_main.php?viewform=B0001_noticeboard_list&board_no=1",
+      "encoding": "euc-kr",
+      "pageSize": 15,
+      "selectors": {
+        "row": "xpath://tr[td/a[contains(@href,'viewContent(')]]",
+        "title": "xpath:./td/a[contains(@class,'board')]/text()[normalize-space()][1]",
+        "link": "a.board",
+        "date": "xpath:./td[5]",
+        "pinned": "xpath:./td/a[contains(@class,'board')]/font[contains(.,'[공지]')]",
+        "attachmentMark": "xpath:.//img[contains(@src,'ldimg052')]",
+        "author": "xpath:./td[3]",
+        "detailTitle": "xpath://td[@height='34'][@bgcolor='#edf8fc']/b",
+        "detailBody": "td.descript",
+        "detailDate": "xpath://td[starts-with(normalize-space(.),'작성일:')]",
+        "attachment": "xpath://a[contains(@href,'act_notice_down')]"
+      },
+      "link": {
+        "pattern": "viewContent\\('1',\\s*'(\\d+)'\\)",
+        "template": "https://ssudorm.ssu.ac.kr:444/SShostel/mall_main.php?viewform=B0001_noticeboard_view&board_no=1&no=$1"
+      },
+      "legacyCode": 101
+    },
+    {
+      "id": "iphak",
+      "name": "입학처 통합공지",
+      "college": "본부",
+      "program": "campus",
+      "engine": "html",
+      "list": "https://iphak.ssu.ac.kr/board/notice_list.asp?page={page}&srchoption=&keyword=&flag=&page_no=1_1_1",
+      "search": "https://iphak.ssu.ac.kr/board/notice_list.asp?page={page}&srchoption=1&keyword={keyword}&flag=&page_no=1_1_1",
+      "web": "https://iphak.ssu.ac.kr/board/notice_list.asp?page=1&srchoption=&keyword=&flag=&page_no=1_1_1",
+      "encoding": "euc-kr",
+      "selectors": {
+        "row": "div.board_list ul > li.tr",
+        "title": "a.board_tit",
+        "date": "xpath:./div[3]",
+        "pinned": "xpath:./div[@class='no']/span[normalize-space(.)='공지']",
+        "attachmentMark": ".board_file",
+        "detailTitle": ".board_view .bv_tit",
+        "detailBody": ".board_view .bv_con",
+        "detailDate": "xpath://ul[@class='bv_info']/li[1]",
+        "attachment": ".bv_file_box a.file"
+      }
+    },
+    {
+      "id": "job",
+      "name": "진로취업센터 (졸업생 프로그램 공지)",
+      "college": "본부",
+      "program": "campus",
+      "engine": "html",
+      "list": "http://job.ssu.ac.kr/service/careerProgram/careerGraduateNoticeList.do?paginationInfo.currentPageNo={page}",
+      "search": "http://job.ssu.ac.kr/service/careerProgram/careerGraduateNoticeList.do?searchType=0002&searchValue={keyword}&paginationInfo.currentPageNo={page}",
+      "web": "http://job.ssu.ac.kr/service/careerProgram/careerGraduateNoticeList.do",
+      "selectors": {
+        "row": "table.t_list tbody tr",
+        "title": "td.title a",
+        "linkAttribute": "data-params",
+        "date": "xpath:./td[4]",
+        "attachmentMark": ".ic_file",
+        "author": "xpath:./td[3]",
+        "detailTitle": "table.board_view thead td.title",
+        "detailBody": "div.rec_cont",
+        "detailDate": "xpath://table[contains(@class,'board_view')]/thead/tr[2]//li[2]",
+        "attachment": ".file_box ul.ul_file a"
+      },
+      "link": {
+        "pattern": "\"dataSeq\"\\s*:\\s*\"([0-9a-fA-F]+)\"",
+        "template": "http://job.ssu.ac.kr/service/careerProgram/careerGraduateNoticeInfo.do?dataSeq=$1"
+      },
+      "expect": {
+        "singlePage": true
+      }
+    },
+    {
+      "id": "oasis",
+      "name": "중앙도서관",
+      "college": "본부",
+      "program": "campus",
+      "engine": "pyxis",
+      "list": "{api}/1/bulletin-boards/1/bulletins?onlyNoticableBulletin=false&offset={offset}&max=10",
+      "search": "{api}/1/bulletin-boards/1/bulletins?offset={offset}&max=10&title={keyword}",
+      "web": "https://oasis.ssu.ac.kr/library-services/bulletin/notice",
+      "pageSize": 10,
+      "options": {
+        "api": "https://oasis.ssu.ac.kr/pyxis-api",
+        "view": "https://oasis.ssu.ac.kr/library-services/bulletin/notice/{id}",
+        "detail": "{api}/1/bulletins/1/{id}",
+        "pinned": "{api}/1/bulletin-boards/1/bulletins?onlyNoticableBulletin=true&max=20",
+        "date": "lastUpdated"
+      }
+    }
+  ]
+}

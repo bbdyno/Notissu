@@ -1,0 +1,99 @@
+{
+ "success": true,
+ "code": "success.retrieved",
+ "message": "Retrieved.",
+ "data": {
+  "totalCount": 1919,
+  "offset": 0,
+  "max": 10,
+  "list": [
+   {
+    "id": "nuigpbsz1fy3k37l",
+    "seqNo": 1949,
+    "bulletinCategory": {
+     "id": 10,
+     "name": "교육",
+     "myParent": null
+    },
+    "bulletinTextHead": null,
+    "bulletinTextHeadId": null,
+    "bulletinState": null,
+    "isPrivate": false,
+    "title": "11월 정보활용교육 신청 안내",
+    "content": null,
+    "writer": "채*미",
+    "dateCreated": "2026-10-28 15:41:26",
+    "hitCnt": 49,
+    "replyCnt": 0,
+    "commentCnt": 0,
+    "attachmentCnt": 1,
+    "attachments": [
+     {
+      "id": 337671,
+      "physicalName": "31dd4bce-e847-4b33-93a3-0347b951829b",
+      "logicalName": "download.png",
+      "fileType": "image/png",
+      "fileSize": 501209,
+      "originalImageUrl": "/attachments/BULLETIN/31dd4bce-e847-4b33-93a3-0347b951829b"
+     }
+    ],
+    "lastUpdated": "2026-10-28 16:24:39",
+    "isPersonal": false,
+    "likeCount": 0,
+    "isMyLike": false
+   },
+   {
+    "id": "91282e1rvgxo1fxm",
+    "seqNo": 1948,
+    "bulletinCategory": {
+     "id": 8,
+     "name": "일반",
+     "myParent": null
+    },
+    "bulletinTextHead": null,
+    "bulletinTextHeadId": null,
+    "bulletinState": null,
+    "isPrivate": false,
+    "title": "자연과학실 휴실로 인한 대출 및 출입불가(10/28~11/4)",
+    "content": null,
+    "writer": "박*용",
+    "dateCreated": "2026-10-28 11:25:35",
+    "hitCnt": 108,
+    "replyCnt": 0,
+    "commentCnt": 0,
+    "attachmentCnt": 0,
+    "attachments": [],
+    "lastUpdated": "2026-10-28 16:38:46",
+    "isPersonal": false,
+    "likeCount": 0,
+    "isMyLike": false
+   },
+   {
+    "id": "ujah8gedtevptutu",
+    "seqNo": 1947,
+    "bulletinCategory": {
+     "id": 9,
+     "name": "전자자원",
+     "myParent": null
+    },
+    "bulletinTextHead": null,
+    "bulletinTextHeadId": null,
+    "bulletinState": null,
+    "isPrivate": false,
+    "title": "[CNKI AI] Free Trial(~'26.12)",
+    "content": null,
+    "writer": "이*학",
+    "dateCreated": "2026-10-27 19:38:43",
+    "hitCnt": 17,
+    "replyCnt": 0,
+    "commentCnt": 0,
+    "attachmentCnt": 0,
+    "attachments": [],
+    "lastUpdated": "2026-10-28 09:00:23",
+    "isPersonal": false,
+    "likeCount": 0,
+    "isMyLike": false
+   }
+  ]
+ }
+}

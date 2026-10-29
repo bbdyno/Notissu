@@ -1,0 +1,31 @@
+name: Board check
+
+# 매일 아침 모든 학과 게시판을 실제로 불러 보고, 깨진 곳이 있으면 실패로 남긴다.
+on:
+  schedule:
+    - cron: "0 22 * * *" # 한국 시간 오전 7시
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "Packages/NoticeKit/**"
+
+jobs:
+  check:
+    runs-on: macos-15
+    defaults:
+      run:
+        working-directory: Packages/NoticeKit
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test
+        run: swift test
+      - name: Check boards
+        run: swift run -c release board-check --report board-check.md
+      - name: Summary
+        if: always()
+        run: cat board-check.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: board-check
+          path: Packages/NoticeKit/board-check.md

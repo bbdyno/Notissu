@@ -1,6 +1,0 @@
-framework module Pods_SoongsilNotice {
-  umbrella header "Pods-SoongsilNotice-umbrella.h"
-
-  export *
-  module * { export * }
-}
