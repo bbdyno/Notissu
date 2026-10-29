@@ -99,23 +99,26 @@ final class FeedModel {
 
     private func fetch(boards: [Board], pages: [String: Int], client: NoticeClient) async -> [String: Result<[NoticeItem], Error>] {
         let keyword = self.keyword
-        return await withTaskGroup(of: (String, Result<[NoticeItem], Error>).self) { group in
+        // 작업 묶음에는 오류 값을 싣지 않는다. 출시 최적화 빌드에서 `Result<_, any Error>`를
+        // 묶음 결과로 넘기면 작업이 끝나는 순간 앱이 죽었다(iOS 27, 2026-10-29).
+        let lists = await withTaskGroup(of: (String, [NoticeItem]?).self) { group in
             for board in boards {
                 let page = pages[board.id] ?? 1
                 group.addTask {
-                    do {
-                        return (board.id, .success(try await client.list(board, page: page, keyword: keyword)))
-                    } catch {
-                        return (board.id, .failure(error))
-                    }
+                    (board.id, try? await client.list(board, page: page, keyword: keyword))
                 }
             }
-            var results: [String: Result<[NoticeItem], Error>] = [:]
-            for await (id, result) in group {
-                results[id] = result
+            var lists: [String: [NoticeItem]?] = [:]
+            for await (id, list) in group {
+                lists[id] = list
             }
-            return results
+            return lists
         }
+        var results: [String: Result<[NoticeItem], Error>] = [:]
+        for (id, list) in lists {
+            results[id] = list.map { .success($0) } ?? .failure(FeedError.loadFailed)
+        }
+        return results
     }
 
     private static func unique(_ refs: [NoticeRef]) -> [NoticeRef] {
@@ -132,6 +135,10 @@ final class FeedModel {
             }
             .map(\.element)
     }
+}
+
+enum FeedError: Error {
+    case loadFailed
 }
 
 extension String {
