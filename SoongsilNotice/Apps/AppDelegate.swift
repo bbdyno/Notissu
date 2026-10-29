@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().delegate = self
         // 처음 쓰는 사람은 게시판을 고른 뒤 첫 화면에서 묻는다.
         if UserDefaults.standard.bool(forKey: AppModel.Key.onboarded) {
-            NotificationPermission.request()
+            Task { await NotificationPermission.requestThenStartAds() }
         }
 
         return true
@@ -31,10 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 /// 알림 허락을 묻고 원격 알림에 등록한다. 이미 답한 사람에게는 창이 다시 뜨지 않는다.
+/// 허락 창이 겹치지 않도록 알림에 답한 뒤에 광고(추적 허락·동의 창)를 준비한다.
 enum NotificationPermission {
-    static func request() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in }
+    @MainActor
+    static func requestThenStartAds() async {
+        _ = try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])
         UIApplication.shared.registerForRemoteNotifications()
+        await Ads.shared.configure()
     }
 }
 

@@ -10,6 +10,7 @@ import NoticeKit
 
 struct SettingsView: View {
     @Environment(AppModel.self) private var app
+    @State private var ads = Ads.shared
 
     var body: some View {
         List {
@@ -19,6 +20,16 @@ struct SettingsView: View {
                 }
             } footer: {
                 Text("소식에는 구독한 게시판의 글이 날짜순으로 모입니다.")
+            }
+
+            if ads.isPrivacyOptionsRequired {
+                Section {
+                    Button("광고 개인정보 설정") {
+                        Task { await ads.presentPrivacyOptions() }
+                    }
+                } footer: {
+                    Text("맞춤 광고 동의를 다시 고를 수 있습니다.")
+                }
             }
 
             Section {
@@ -89,6 +100,7 @@ struct AboutView: View {
             Section("오픈소스") {
                 Link("Kanna", destination: URL(string: "https://github.com/tid-kijyun/Kanna")!)
                 Link("Firebase", destination: URL(string: "https://github.com/firebase/firebase-ios-sdk")!)
+                Link("Google Mobile Ads", destination: URL(string: "https://github.com/googleads/swift-package-manager-google-mobile-ads")!)
             }
         }
         .navigationTitle("노티쓔에 대해")

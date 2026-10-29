@@ -57,7 +57,7 @@ struct OnboardingView: View {
                 Button {
                     app.subscriptions = picked
                     app.isOnboarded = true
-                    NotificationPermission.request()
+                    Task { await NotificationPermission.requestThenStartAds() }
                 } label: {
                     Text(picked.isEmpty ? "게시판을 골라 주세요" : "\(picked.count)곳으로 시작하기")
                         .font(.headline)

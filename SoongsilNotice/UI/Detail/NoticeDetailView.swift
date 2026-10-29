@@ -78,6 +78,7 @@ struct NoticeDetailView: View {
             .frame(maxWidth: .infinity)
         }
         .background(Theme.background)
+        .onDisappear { Ads.shared.noticeClosed() }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItemGroup(placement: .topBarTrailing) {

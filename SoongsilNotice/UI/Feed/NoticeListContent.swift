@@ -39,13 +39,16 @@ struct NoticeListContent: View {
             if model.items.isEmpty && (!showsPinnedInline || model.pinned.isEmpty) {
                 StatusMessage(symbol: "tray", text: emptyMessage)
             }
-            ForEach(model.items) { ref in
+            ForEach(Array(model.items.enumerated()), id: \.element.id) { index, ref in
                 NoticeRowLink(ref: ref, showsBoard: showsBoard)
                     .onAppear {
                         if ref.id == model.items.last?.id {
                             Task { await model.loadMore(using: app) }
                         }
                     }
+                if (index + 1) % AdPacing.inlineEvery == 0 {
+                    InlineAdRow()
+                }
             }
             if model.isLoadingMore {
                 HStack {

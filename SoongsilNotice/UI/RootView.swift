@@ -73,6 +73,7 @@ struct TabStack: View {
                 }
             }
         }
+        .safeAreaInset(edge: .bottom, spacing: 0) { AdBanner() }
     }
 }
 
@@ -119,6 +120,7 @@ private struct SplitRootView: View {
                         EmptyDetailView()
                     }
                 }
+                .safeAreaInset(edge: .bottom, spacing: 0) { AdBanner() }
                 .frame(maxWidth: .infinity)
             }
         }
